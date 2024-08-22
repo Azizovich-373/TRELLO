@@ -1,4 +1,3 @@
-const baseURL = 'http://localhost:8080'
 export function Task(item) {
     const task_body = document.createElement('div');
     const task_description = document.createElement('p');
@@ -15,19 +14,6 @@ export function Task(item) {
     }
     task_body.ondragend = () => {
         task_body.classList.remove('hide')
-        const cols = document.querySelectorAll('.task-card');
-        let newStatus;
-
-        cols.forEach((column, index) => {
-            if (column.contains(task_body)) {
-                newStatus = index + 1;
-            }
-        });
-
-        fetch(`${baseURL}/tasks/${task_body.getAttribute('data-id')}`, {
-            method: "PATCH",
-            body: JSON.stringify({ status: newStatus })
-        })
     }
 
     return task_body;

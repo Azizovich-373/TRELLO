@@ -6,6 +6,7 @@
 	<link rel="icon" type="image/svg+xml" href="/vite.svg" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<link rel="stylesheet" href="style.scss">
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 	<title>Trello</title>
 	<style>
 		* {
@@ -165,7 +166,6 @@
 					<div class="elem">
 						<img src="/calendary.svg" alt="">
 						<p>Календарь</p>
-						
 					</div>
 				</div>
 				<div class="board">
@@ -241,13 +241,19 @@
 						<button class="task_btn">+ Добавить ещё одну калону</button>
 					</div>
 				</div>
+				<div class="trash_cont">
+					<div class="trash">
+						<video class="video_trash" src="/trash_anim.mp4" alt="">
+						<audio class="audio_trash" src="/trash.mp3"></audio>
+					</div>
+				</div>
 			</div>
 		</div>
 		
 	</div>
 
-
-
+	<audio class="success" src="/success.mp3"></audio>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 	<script type="module" src="/main.js"></script>
 </body>
 

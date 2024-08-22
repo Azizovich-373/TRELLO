@@ -1,14 +1,9 @@
 {
   "tasks": [
     {
-      "id": "2cbb",
-      "description": "Watch movie , People in dark",
-      "status": 2
-    },
-    {
-      "id": "09c4",
-      "description": "DO ht",
-      "status": 3
+      "id": "112e",
+      "description": "Do ht\n",
+      "status": 1
     }
   ]
 }
