@@ -7,40 +7,17 @@ const btns = document.querySelectorAll('.task_btn')
 const btn = document.querySelector('.create_new')
 const form_cont = document.querySelector('.task-form-container')
 const trash = document.querySelector('.trash')
-const trash_cont = document.querySelector('.trash_cont')
 const video = document.querySelector('.video_trash')
 const audio = document.querySelector('.audio_trash')
 const success = document.querySelector('.success')
 const exit = document.querySelector('.exit')
 const form = document.forms.namedItem('task-form')
 
-trash_cont.ondragover = (e) => {
-    e.preventDefault()
-}
-trash_cont.ondragleave = (e) => {
-    e.preventDefault()
-    setTimeout(() => {
-        if (!isInsideTrash) {
-            trash.style.right = '-1000px';
-        }
-    }, 1000);
-}
-trash_cont.ondragenter = (e) => {
-    e.preventDefault()
-    trash.style.right = '10px'
-}
 trash.ondragover = (e) => {
     e.preventDefault()
 }
 trash.ondragenter = (e) => {
     e.preventDefault()
-}
-trash.ondragleave = (e) => {
-    e.preventDefault()
-    video.pause();
-    video.currentTime = 0
-    audio.pause()
-    audio.currentTime = 0
 }
 trash.ondrop = async (e) => {
     e.preventDefault()
@@ -57,13 +34,11 @@ trash.ondrop = async (e) => {
     if(res.status === 200){
         TrueToastify()
         setTimeout(() => {
-            trash.style.transition = 'right 0.5s ease'; // Плавный переход
             trash.style.right = '-1000px';
         }, 1000)
     } else {
         WrongToastify()
         setTimeout(() => {
-            trash.style.transition = 'right 0.5s ease'; // Плавный переход
             trash.style.right = '-1000px';
         }, 1000)
     }
@@ -110,6 +85,7 @@ cols.forEach((col, idx) => {
     
 	col.ondragover = (event) => {
 		event.preventDefault()
+        trash.style.right = '10px'
 	}
 	col.ondragenter = (event) => {
 		event.preventDefault()
@@ -117,6 +93,9 @@ cols.forEach((col, idx) => {
 	col.ondrop = async () => {
 		const selectedTask = document.getElementById('selected')
 		col.append(selectedTask)
+        setTimeout(() => {
+            trash.style.right = '-1000px';
+        }, 1000)
         success.play()
         success.currentTime = 0
 		selectedTask.removeAttribute('id')
