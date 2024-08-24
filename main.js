@@ -85,7 +85,6 @@ cols.forEach((col, idx) => {
     
 	col.ondragover = (event) => {
 		event.preventDefault()
-        trash.style.right = '10px'
 	}
 	col.ondragenter = (event) => {
 		event.preventDefault()

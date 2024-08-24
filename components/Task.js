@@ -1,3 +1,4 @@
+const trash = document.querySelector('.trash')
 export function Task(item) {
     const task_body = document.createElement('div');
     const task_description = document.createElement('p');
@@ -8,6 +9,7 @@ export function Task(item) {
     task_body.append(task_description)
     task_body.ondragstart = () => {
         task_body.id = "selected"
+        trash.style.right = '10px'
         setTimeout(() => {
             task_body.classList.add('hide')
         }, 0);
