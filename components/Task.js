@@ -15,6 +15,7 @@ export function Task(item) {
         }, 0);
     }
     task_body.ondragend = () => {
+        trash.style.right = '-1000px'
         task_body.classList.remove('hide')
     }
 
