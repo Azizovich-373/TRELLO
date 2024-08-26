@@ -19,7 +19,8 @@
 			margin: 0 auto;
 			height: 100%;
 		}
-		.task-form-container {
+		.task-form-container,
+		.col-form-container {
 			text-align: center;
 			position: absolute;
 			top: 50%;
@@ -112,6 +113,18 @@
 				<button type="submit">Create Task</button>
 			</form>
 	</div>
+	<div class="col-form-container">
+			<button id="col_exit" class="exit">x</button>
+			<h2>Create a New Column</h2>
+			<form name="col-form" id="col-form">
+				<div class="form-group">
+					<label for="title">Task Title</label>
+					<input type="text" id="title" name="title" placeholder="Название колонки" required>
+				</div>
+
+				<button type="submit">Create Column</button>
+			</form>
+	</div>
 
 
 	<div class="container">
@@ -201,44 +214,9 @@
 					</nav>
 				</header>
 				<div class="main_place">
-					<div class="col">
-						<div class="task-header">
-							<h3 class="task-title">Todo</h3>
-							<button class="task-options">⋮</button>
-						</div>
-						<div class="task-card">
-							
-						</div>
-						<div class="task-footer">
-							<button class="task_btn">+ Добавить карточку</button>
-						</div>
-					</div>
-					<div class="col">
-						<div class="task-header">
-							<h3 class="task-title">В процессе</h3>
-							<button class="task-options">⋮</button>
-						</div>
-						<div class="task-card" draggable="true">
-							
-						</div>
-						<div class="task-footer">
-							<button class="task_btn">+ Добавить карточку</button>
-						</div>
-					</div>
-					<div class="col">
-						<div class="task-header">
-							<h3 class="task-title">Готово</h3>
-							<button class="task-options">⋮</button>
-						</div>
-						<div class="task-card" draggable="true">
-							
-						</div>
-						<div class="task-footer">
-							<button class="task_btn">+ Добавить карточку</button>
-						</div>
-					</div>
-					<div class="col" id="new_col">
-						<button class="task_btn">+ Добавить ещё одну калону</button>
+					<div class="cols_place"></div>
+					<div id="new_col">
+						<button class="col_btn">+ Добавить ещё одну калону</button>
 					</div>
 				</div>
 				<div class="trash_cont">

@@ -9,7 +9,7 @@
         cursor: pointer;
     }
     .col {
-        width: 280px;
+        width: 250px;
         background-color: black;
         padding: 20px;
         display: flex;
@@ -19,7 +19,7 @@
         gap: 10px;
     }
     #new_col{
-        width: 280px;
+        width: 250px;
         height: 48px;
         background: #FFFFFF3D;
         padding: 15px;
@@ -28,6 +28,9 @@
         border-radius: 30px;
         flex-direction: column;
         gap: 10px;
+        button{
+            width: 200px;
+        }
     }
     .task-body {   
         transition: box-shadow 0.3s ease-in-out;
@@ -75,7 +78,8 @@
         display: flex;
         justify-content: space-between;
     }
-    .task_btn{
+    .task_btn,
+    .col_btn{
         color: #fff;
         background-color: transparent;
         border: none;
@@ -285,7 +289,12 @@
                 display: flex;
                 gap: 30px;
                 flex-direction: row;
-                
+                overflow-x: scroll;
+                .cols_place{
+                    display: flex;
+                    gap: 30px;
+                    flex-direction: row;
+                }
             }
         }
     }
